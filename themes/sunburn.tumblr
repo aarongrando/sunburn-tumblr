@@ -8,10 +8,16 @@
 	<div id="wrapper">
 	
 		<div id="title">
+			<img class="logo-burst" src="/themes/sunburn/images/logo-burst.png" />
+			<h2>AVAILABLE SOON FOR iOS</h2>
 			<a href="/">
-				{Title}
+				<img class="logo" src="/themes/sunburn/images/logo-type.png" alt="SUNBURN!"/> 
 			</a>
-	        <div id="avatar"><a href="/"><img src="{PortraitURL-128}" /></a></div>
+	        <div id="avatar"><a href="/"><img src="/themes/sunburn/images/crew/cosima.png" /></a></div>
+		</div>
+	
+		<div id="video">
+			<img class="placeholder" src="/themes/sunburn/images/video-placeholder.png" />
 		</div>
 	
 		<div id="content">
@@ -28,6 +34,15 @@
 
 			{block:Posts}
 				<div class="post">
+
+					<div class="post-info">
+						<div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</div>
+						<!-- 
+						{ShareButton}
+						{LikeButton}
+						{ReblogButton}
+						-->
+					</div>
 
 					{block:Photo}
 						<div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
@@ -103,23 +118,6 @@
 						{block:Description}<div class="copy">{Description}</div>{/block:Description}
 					{/block:Link}
 			
-					<a href="{Permalink}">
-						<div class="footer for_permalink">
-							<div class="date">
-								{block:Reblog}
-								Reblogged {TimeAgo} from {ReblogParentName}
-								{block:RebloggedFromReblog}(<span style="text-transform:lowercase;">Originally from {ReblogRootName}</span>){/block:RebloggedFromReblog}
-								{/block:Reblog}
-								&nbsp;
-								{block:Date}
-								Posted {TimeAgo} from {source}
-								{/block:Date}
-							</div>
-							<div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</div>
-							<div class="clear"></div>
-						</div>
-					</a>
-			
 					<div class="footer {block:ContentSource}with_source_url{/block:ContentSource}" style="
 					  display:none;
 					  {block:HasTags}display:block;{/block:HasTags}
@@ -139,9 +137,7 @@
 				 
 					  <div class="clear"></div>
 					</div>
-					{block:PostNotes}<div class="notecontainer">{PostNotes}</div>{/block:PostNotes}
 				</div>
-				<div class="bottom"></div>
 			{/block:Posts}
 
 			{block:Pagination}

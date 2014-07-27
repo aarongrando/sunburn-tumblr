@@ -1,6 +1,7 @@
 body {
     background: url('/themes/sunburn/images/background-stars.png');
 	background-size: 720px;
+	background-attachment: fixed;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
@@ -17,35 +18,95 @@ a img {
 }
 
 #wrapper {
-    width: 845px;
+    width: 100%;
     margin: 0 auto;
 }
  
 #title {
-    margin: 30px 0;
     color: #fff;
     font-size: 50px;
     font-weight: bold;
     text-shadow: 1px 3px 5px rgba(0,0,0, 0.5);
     letter-spacing: -1px;
+	height: 350px;
+	
+	.logo-burst {
+		display: block;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 500px;
+	}
+	
+	h2 {
+		display: block;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: 40px;
+		text-align: center;
+		width: 100%;
+		font-size: 48px;
+		text-shadow: none;
+	}
+	
+	.logo {
+		display: block;
+		position: absolute;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		top: 100px;
+		width: 840px;
+	}
 	
 	a {
-        color: #fff;
         text-decoration: none;
     }
+	
+	#avatar {
+		img {
+			display: block;
+			position: absolute;
+			margin: 0 auto;
+			left: 0;
+			right: 0;
+			top: 260px;
+			width: 64px;
+		}
+	}
 }
-        
+      
+#video {
+	.placeholder {
+		width: 100%;
+	}
+}
+	    
  #content {
-    width: 520px;
-    float: left;
+    max-width: 640px;
+	margin: 50px auto;
 }
 
 .post {
-    background: #fff;
-    padding: 10px;
+    background: transparent;
+	margin-top: 50px;
     position: relative;
 	
+	.post-info {
+		position: absolute;
+		width: 46px;
+		left: -60px;
+		color: #fff;
+		top: 10px;
+		text-align: right;
+	}
+	
 	.media {
+		border: 5px solid #001D38;
         text-align: center;
         margin-bottom: 10px;
     }
@@ -53,18 +114,18 @@ a img {
 	.quotebg {
         font-size: 150px;
         color: #3b627e;
-        opacity: 0.2;
+        opacity: 0.3;
         filter: alpha(opacity=20);
         -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
         position: absolute;
-        top: 70px;
-        left: 10px;
+        top: 40px;
+        left: 0px;
     }
 	
 	.quote {
-        color: #3b627e;
+        color: #2094A5;
         font-weight: bold;
-        padding: 20px 20px 5px 20px;
+        padding: 0px 20px 5px 20px;
 		
 		&.short {
             font-size: 33px;
@@ -97,14 +158,17 @@ a img {
 	}
 	
 	.copy {
-        color: #6e7173;
-        padding: 10px;
-        font-size: 13px;
-        line-height: 15px;
+        color: #FFAB00;
+        font-size: 17px;
+        line-height: 27px;
 		
 		a {
-            color: #6e7173;
-            text-decoration: underline;
+            color: #ff2166;
+            text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline;
+			}
         }
 		
 		p {
@@ -131,34 +195,13 @@ a img {
 		blockquote {
             margin: 10px 0px 10px 10px;
             padding-left: 15px;
-            border-left: solid 4px #dcdcdc;
-			
-			blockquote {
-				border-left: solid 4px #cccccc;
-
-				blockquote {
-					border-left: solid 4px #bcbcbc;
-
-					blockquote {
-						border-left: solid 4px #acacac;
-					
-						blockquote {
-							border-left: solid 4px #9c9c9c;
-							
-							blockquote {
-								border-left: solid 4px #8c8c8c;
-							}
-						}
-					}
-				}
-			}
+            border-left: solid 4px #2094A5;
 		}
     }
 	
 	.audio {
         background: #eaeaea;
         float: left;
-        padding: 7px;
         margin-bottom: 10px;
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
@@ -225,14 +268,12 @@ a img {
     }
 	
 	.title {
-        color: #494949;
-        font-size: 16px;
-        font-weight: bold;
-        padding: 10px 10px 0 10px;
+		color: #fff;
+		font-size: 36px;
     }
 	
-	img {
-      max-width: 500px;
+	img, iframe {
+      width: 100%;
     }
 	
 	.chat {
@@ -259,8 +300,9 @@ a img {
 	
 	.link {
         margin: 4px 0 2px 0;
-        font-size: 16px;
-        line-height: 25px;
+        font-size: 17px;
+        line-height: 27px;
+		padding: 14px 0;
 		
 		a {
             background-color: #3b627e;
@@ -268,7 +310,7 @@ a img {
             padding: 5px 7px;
             -moz-border-radius: 4px;
             -webkit-border-radius: 4px;
-            border-radius: 4px;
+            border-radius: 1px;
 			
 			&:hover {
                 opacity: 0.9;
@@ -279,14 +321,9 @@ a img {
     }
 	
 	.footer {
-        background: #eaeaea;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
-        font-size: 11px;
-        color: #666;
-        padding: 5px 10px;
-        margin-top: 10px;
+        font-size: 13px;
+        color: #fff;
+        margin-top: 15px;
 		
 		&.for_permalink:hover {
             opacity: 0.9;
@@ -307,13 +344,13 @@ a img {
             color: #666;
 			
 			a {
-                color: #666;
+                color: #ddd;
             }
         }
 		
 		.tags {
 			a {
-                color: #4a4a51;
+                color: #ddd;
                 text-decoration: underline;
             }
 			.tag-commas:last-child {
@@ -402,13 +439,6 @@ a img {
 		}
 	}
 } 
-
-.bottom {
-	background: url('http://assets.tumblr.com/themes/redux/shadow-post.png') top center no-repeat transparent;
-	width: 513px;
-	height: 40px;
-	margin: 0 auto;
-}
 				
 #navigation {
 	text-align: right;
